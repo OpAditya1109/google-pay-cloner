@@ -260,12 +260,81 @@ body {
   margin-top: .5rem;
 }
 
-#video {
- 
- display: none; /* Ensure the video is displayed */
-  width: 100%; /* Adjust width as needed */
-  height: auto; /* Maintain aspect ratio */
-  z-index: 1000; /* Make sure it's on top */
-  position: relative; /* Ensure it's not hidden by other elements */
-  background-color: black;
+#scanner {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.8); /* Darken the background */
 }
+
+#video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure video covers the entire area */
+    position: absolute;
+    z-index: 1; /* Place video behind the scanner */
+}
+
+/* Scanning frame */
+.scanner-frame {
+    position: relative;
+    width: 300px;  /* Adjust this to set the size of the scanner */
+    height: 300px; /* Adjust height as needed */
+    z-index: 2;  /* Keep it above the video */
+}
+
+/* Corner borders */
+.scanner-border {
+    position: absolute;
+    width: 50px; /* Adjust this for the size of the borders */
+    height: 50px;
+    border: 10px solid ; /* Border color */
+    z-index: 3;
+}
+
+.top-left {
+    top: 0;
+    left: 0;
+    border-bottom: none;
+    border-right: none;
+    border-color: red;
+}
+
+.top-right {
+    top: 0;
+    right: 0;
+    border-bottom: none;
+    border-left: none;
+    border-color: yellow;
+}
+
+.bottom-left {
+    bottom: 0;
+    left: 0;
+    border-top: none;
+    border-right: none;
+    border-color: green;
+}
+
+.bottom-right {
+    bottom: 0;
+    right: 0;
+    border-top: none;
+    border-left: none;
+    border-color: blue;
+}
+#main{
+  height: 100%;
+  width:100%
+}
+
+
+html,body{
+  height: 100%;
+  width: 100%;
+}
+
