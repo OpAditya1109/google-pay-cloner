@@ -3,15 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/ionicons@5.1.2/dist/ionicons.js"></script>
     <link rel="icon" type="image/x-png" href="images/favicon.png">
-    <link rel="stylesheet" href="style.css">
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> <script src="https://unpkg.com/@zxing/library@latest"></script>
     <title>Secure Pay</title>
 </head>
 <body>
-
+<div id="main">
     <header class="header pd">
         <div class="header__user">
             <img class="photo" src="./images/profile.png" alt="user profile">
@@ -146,31 +147,20 @@
             </div>
         </div>
     </section>
+ </div>
 
+<div id="scanner">
     <video id="video"></video> <!-- Video element for scanning -->
+    
+    <!-- Scanner frame for corners -->
+    <div class="scanner-frame">
+        <div class="scanner-border top-left"></div>
+        <div class="scanner-border top-right"></div>
+        <div class="scanner-border bottom-left"></div>
+        <div class="scanner-border bottom-right"></div>
+    </div>
+</div>
 
-    <script>
-  document.getElementById('scanner_click').addEventListener('click', function() {
-    const video = document.getElementById('video');
-    video.style.display = 'block'; // Ensure the video element is visible
-
-    const codeReader = new ZXing.BrowserQRCodeReader();
-
-    codeReader.decodeFromInputVideoDevice(undefined, 'video')
-        .then(result => {
-            console.log(result);
-            alert('QR Code: ' + result.text); // Show QR code result
-            video.style.display = 'none'; // Hide the video element after scan
-        })
-        .catch(err => {
-            console.error(err);
-            alert('Error: ' + err); // Display error for debugging
-        });
-
-    // Ensure the video plays
-    video.play();
-});
-
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
