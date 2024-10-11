@@ -327,6 +327,18 @@ body {
     border-left: none;
     border-color: blue;
 }
+#close-button{
+  height: 40px;
+  width: 40px;
+  background-color: white;
+  position: fixed;
+  z-index: 10000;
+  top: 0;
+  left: 0;
+  font-size: 20px;
+
+}
+
 #main{
   height: 100%;
   width:100%

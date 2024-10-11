@@ -21,6 +21,7 @@ maindiv.style.display="none"
       console.log(result);
       alert("QR Code: " + result.text); // Show QR code result
       video.style.display = "none"; // Hide the video element after scan
+      maindiv.style.display = "block";
     })
     .catch((err) => {
       console.error(err);
@@ -30,5 +31,15 @@ maindiv.style.display="none"
   // Ensure the video plays (this might not work due to autoplay restrictions)
   video.play().catch((error) => {
     console.error("Video play failed:", error); // Log error if autoplay fails
+    
+
+
   });
+
 });
+let maindiv = document.getElementById("main");
+let buttonClose = document.getElementById("close-button");
+      buttonClose.addEventListener("click", function () {
+       maindiv.style.display = "block";
+        console.log("close");
+      });
